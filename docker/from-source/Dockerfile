@@ -28,16 +28,16 @@ RUN chmod +x /build.sh
 
 # set up Collabora Online (normally done by postinstall script of package)
 # Fix permissions
-RUN setcap cap_fowner,cap_chown,cap_sys_chroot=ep /usr/bin/coolforkit-caps && \
-    setcap cap_sys_admin=ep /usr/bin/coolmount && \
-    adduser --quiet --system --group --home /opt/cool cool && \
-    rm -rf /opt/cool && \
-    mkdir -p /opt/cool/child-roots && \
-    coolwsd-systemplate-setup /opt/cool/systemplate /opt/lokit >/dev/null 2>&1 && \
-    touch /var/log/coolwsd.log && \
-    chown cool:cool /var/log/coolwsd.log && \
-    chown -R cool:cool /opt/ && \
-    chown -R cool:cool /etc/coolwsd
+# RUN setcap cap_fowner,cap_chown,cap_sys_chroot=ep /usr/bin/coolforkit-caps && \
+#     setcap cap_sys_admin=ep /usr/bin/coolmount && \
+#     adduser --quiet --system --group --home /opt/cool cool && \
+#     rm -rf /opt/cool && \
+#     mkdir -p /opt/cool/child-roots && \
+#     coolwsd-systemplate-setup /opt/cool/systemplate /opt/lokit >/dev/null 2>&1 && \
+#     touch /var/log/coolwsd.log && \
+#     chown cool:cool /var/log/coolwsd.log && \
+#     chown -R cool:cool /opt/ && \
+#     chown -R cool:cool /etc/coolwsd
 
 EXPOSE 9980
 
