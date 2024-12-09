@@ -97,13 +97,13 @@ fi
 
 
 # brand repo
-if test ! -d online-branding ; then
-  git clone git@gitlab.collabora.com:productivity/online-branding.git online-branding || echo "Could not clone this proprietary repo"
-fi
+# if test ! -d online-branding ; then
+#   git clone git@gitlab.collabora.com:productivity/online-branding.git online-branding || echo "Could not clone this proprietary repo"
+# fi
 
-if test -d online-branding ; then
-  ( cd online-branding && git pull -r ) || exit 1
-fi
+# if test -d online-branding ; then
+#   ( cd online-branding && git pull -r ) || exit 1
+# fi
 
 ##### LOKit (core) #####
 
@@ -130,13 +130,13 @@ cp -a core/instdir "$INSTDIR"/opt/lokit
 ( cd online && DESTDIR="$INSTDIR" make install ) || exit 1
 
 ##### online branding #####
-if test -d online-branding ; then
-  if ! which sass &> /dev/null; then npm install -g sass; fi
-  cd online-branding
-  ./brand.sh $INSTDIR/opt/lokit $INSTDIR/usr/share/coolwsd/browser/dist CODE # CODE
-  ./brand.sh $INSTDIR/opt/lokit $INSTDIR/usr/share/coolwsd/browser/dist NC-theme-community # Nextcloud Office
-  cd ..
-fi
+# if test -d online-branding ; then
+#   if ! which sass &> /dev/null; then npm install -g sass; fi
+#   cd online-branding
+#   ./brand.sh $INSTDIR/opt/lokit $INSTDIR/usr/share/coolwsd/browser/dist CODE # CODE
+#   ./brand.sh $INSTDIR/opt/lokit $INSTDIR/usr/share/coolwsd/browser/dist NC-theme-community # Nextcloud Office
+#   cd ..
+# fi
 
 # Create new docker image
 if [ -z "$NO_DOCKER_IMAGE" ]; then
