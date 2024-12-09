@@ -45,6 +45,7 @@ L.Map.Welcome = L.Handler.extend({
 	},
 
 	shouldWelcome: function() {
+		return false;
 		var storedVersion = window.prefs.get('WSDWelcomeVersion');
 		var currentVersion = app.socket.WSDServer.Version;
 		var welcomeDisabledCookie = window.prefs.getBoolean('WSDWelcomeDisabled');
