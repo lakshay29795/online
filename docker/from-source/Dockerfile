@@ -22,7 +22,7 @@ RUN apt-get update && \
 COPY /instdir /
 
 # copy the shell script which can start Collabora Online (coolwsd)
-COPY build.sh /build.sh
+COPY ./build.sh /build.sh
 
 RUN chmod +x /build.sh
 
