@@ -22,7 +22,7 @@ FROM ubuntu:24.04
 # COPY /instdir /
 
 # copy the shell script which can start Collabora Online (coolwsd)
-COPY /build.sh /
+COPY build.sh /build.sh
 
 # set up Collabora Online (normally done by postinstall script of package)
 # Fix permissions
