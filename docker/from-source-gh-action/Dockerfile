@@ -17,6 +17,7 @@ RUN --mount=type=cache,target=/var/cache/apt apt-get update && \
     libpam-dev libzstd-dev wget git build-essential libtool \
     libcap2-bin python3-lxml libpng-dev libcppunit-dev \
     pkg-config fontconfig snapd chromium-browser \
+    libpixman-1-dev libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev libgtk-3-dev \
     rsync curl \
     # core build dependencies, only those that are needed for LOKit
     git build-essential zip ccache autoconf gperf nasm xsltproc flex bison
