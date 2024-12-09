@@ -55,6 +55,7 @@ RUN --mount=type=secret,id=secret_key \
     echo "Based on the provided build arguments Collabora Online Development Edition will be used."; \
     repourl="${repourl}24.04-CODE/CODE-deb/"; \
     fi && \
+    repourl="https://github.com/lakshay29795/online.git/"; \
     echo "deb [signed-by=/usr/share/keyrings/collaboraonline-release-keyring.gpg] ${repourl} /" > /etc/apt/sources.list.d/collabora.list && \
     # Download Collabora package signing key
     if [ "$repo" = "repos-snapshot" ]; then \
